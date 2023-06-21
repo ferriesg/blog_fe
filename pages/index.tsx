@@ -5,28 +5,36 @@ import {
   InfoBox,
   Content,
   OtherInfo,
-  CardItem
+  CardItem,
+  Title
 } from "../styles/HomePage.styles";
-import { Box } from '@chakra-ui/react'
+import { Box } from "@chakra-ui/react";
 import Image from "next/image";
+import handleDate from "@/utils/handleDate";
 import testImg from "../assets/1111.png";
-function Home(props) {
+function Home(props: any) {
+  const { data } = props;
   return (
     <>
       <Header />
       <HomeBody>
         <Box flex={4}>
-          <BlogItem>
-            <Image width={250} height={160} src={testImg} />
-            <InfoBox>
-              <h2>title</h2>
-              <Content>info</Content>
-              <hr />
-              <OtherInfo>11111</OtherInfo>
-            </InfoBox>
-          </BlogItem>
-          <BlogItem></BlogItem>
-          <BlogItem></BlogItem>
+          {data.map((item) => {
+            return (
+              <BlogItem key={item._id}>
+                <Image width={250} height={160} src={item.image} />
+                <InfoBox>
+                  <Title>{item.title}</Title>
+                  <Content>{item.description}</Content>
+                  <hr />
+                  <OtherInfo>
+                    <div>{item.tag}</div>
+                    <div>{handleDate(item.updateAt)}</div>
+                  </OtherInfo>
+                </InfoBox>
+              </BlogItem>
+            );
+          })}
         </Box>
         <Box flex={1}>
           <CardItem height="100px"></CardItem>
@@ -37,8 +45,13 @@ function Home(props) {
 }
 
 export async function getStaticProps(context) {
+  const data = await fetch("http://127.0.0.1:8080/blog");
+  const res = await data.json();
+
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      data: res.data,
+    }, // will be passed to the page component as props
   };
 }
 

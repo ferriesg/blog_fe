@@ -25,6 +25,7 @@ export const Content = styled.p`
 
 export const OtherInfo = styled(Flex)`
   height:40px;
+  justify-content: space-between;
 `
 
 export const CardItem = styled(Box)`
@@ -32,4 +33,15 @@ export const CardItem = styled(Box)`
   margin:20px 0 0 20px;
   box-shadow: rgb(142 142 142 / 19%) 4px 4px 4px 9px;
 
+`
+export const Title = styled.h2`
+  cursor: pointer;
+  display: inline;
+  background: linear-gradient(to right,#ec695c,#61c454) no-repeat right bottom;
+  background-size: 0 100%;
+  transition : background-size 1300ms;
+  :hover{
+    background-position-x: left;
+    background-size: 100% 2px;
+  }
 `
