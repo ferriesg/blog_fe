@@ -4,7 +4,7 @@ import { Box, Flex } from "@chakra-ui/react";
 export const HeaderBox = styled(Flex)`
   width: 100%;
   height: 60px;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   justify-content: center;
   box-shadow: rgb(142 142 142 / 19%) 0 6px 15px 0;

@@ -16,7 +16,6 @@ function Home(props: any) {
   const { data } = props;
   return (
     <>
-      <Header />
       <HomeBody>
         <Box flex={4}>
           {/* {data.map((item) => {

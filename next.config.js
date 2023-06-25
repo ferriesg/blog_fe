@@ -10,7 +10,7 @@ const nextConfig = {
     //     pathname: '/account123/**',
     //   },
     // ],
-    domains:['img1.baidu.com','image.baidu.com']
+    domains:['img1.baidu.com','image.baidu.com','114.132.175.151']
   },
 };
 module.exports = nextConfig;

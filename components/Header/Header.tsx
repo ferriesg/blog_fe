@@ -10,7 +10,9 @@ export default function Header() {
           <ItemBox color="#fc5705">首页</ItemBox>
           <ItemBox>Github</ItemBox>
           <ItemBox>工具</ItemBox>
-          <ItemBox>searchs</ItemBox>
+          <ItemBox as="a" href="/tools">
+            searchs
+          </ItemBox>
         </RightBox>
       </HeaderCenter>
     </HeaderBox>
