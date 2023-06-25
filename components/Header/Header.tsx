@@ -5,12 +5,7 @@ export default function Header() {
   return (
     <HeaderBox>
       <HeaderCenter>
-        <Image
-          alt=""
-          width={"auto" as SafeNumber | undefined}
-          height={60}
-          src={Logo}
-        />
+        <Image alt="" style={{ width: "auto" }} height={60} src={Logo} />
         <RightBox>
           <ItemBox color="#fc5705">首页</ItemBox>
           <ItemBox>Github</ItemBox>
