@@ -6,7 +6,7 @@ import {
   Content,
   OtherInfo,
   CardItem,
-  Title
+  Title,
 } from "../styles/HomePage.styles";
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
@@ -19,7 +19,7 @@ function Home(props: any) {
       <Header />
       <HomeBody>
         <Box flex={4}>
-          {data.map((item) => {
+          {/* {data.map((item) => {
             return (
               <BlogItem key={item._id}>
                 <Image width={250} height={160} src={item.image} />
@@ -34,7 +34,8 @@ function Home(props: any) {
                 </InfoBox>
               </BlogItem>
             );
-          })}
+          })} */}
+          test github
         </Box>
         <Box flex={1}>
           <CardItem height="100px"></CardItem>
@@ -44,15 +45,15 @@ function Home(props: any) {
   );
 }
 
-export async function getStaticProps(context) {
-  const data = await fetch("http://127.0.0.1:8080/blog");
-  const res = await data.json();
+// export async function getStaticProps(context) {
+//   const data = await fetch("http://127.0.0.1:8080/blog");
+//   const res = await data.json();
 
-  return {
-    props: {
-      data: res.data,
-    }, // will be passed to the page component as props
-  };
-}
+//   return {
+//     props: {
+//       data: res.data,
+//     }, // will be passed to the page component as props
+//   };
+// }
 
 export default Home;
